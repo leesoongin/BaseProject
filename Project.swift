@@ -1,4 +1,11 @@
 import ProjectDescription
+import ProjectDescriptionHelpers
+import MyPlugin
+
+//let project = Project.app(name: "TodayWoon",
+//                          targets: Module.allModules)
+
+
 
 let project = Project(
     name: "BaseProject",
@@ -15,7 +22,13 @@ let project = Project(
             ),
             sources: ["BaseProject/Sources/**"],
             resources: ["BaseProject/Resources/**"],
-            dependencies: []
+            dependencies: [
+                .external(name: "Alamofire"),
+                .external(name: "Then"),
+                .external(name: "SnapKit"),
+                .external(name: "CombineExt"),
+                .external(name: "CombineCocoa")
+            ]
         ),
         .target(
             name: "BaseProjectTests",
